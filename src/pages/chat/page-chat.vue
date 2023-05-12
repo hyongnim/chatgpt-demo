@@ -31,7 +31,7 @@
         <!-- <p class="fz-12 gray">{{ curSession.msgNum }} message</p> -->
       </div>
       <div class="ml-auto">
-        <div class="d-ib btn-wrap active" @click="onClear">
+        <div class="d-ib btn-wrap bd-gray" @click="onClear">
           <img src="img/clean.svg" width="14" class="d-b" />
         </div>
       </div>
