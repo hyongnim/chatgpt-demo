@@ -51,7 +51,7 @@
       <textarea
         class="pa-3"
         rows="4"
-        placeholder="Enter something..."
+        placeholder="Enter somthing... Press Ctrl + Enter to send message"
         v-model="inputMsg"
         @keyup.enter.ctrl="onSend"
       ></textarea>
