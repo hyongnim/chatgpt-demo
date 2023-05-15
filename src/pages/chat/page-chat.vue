@@ -216,15 +216,18 @@ export default {
           }
         });
         source.addEventListener("error", (e) => {
-          console.log(e);
           let msg = "Network Error";
           if (e.data) {
             const data = JSON.parse(e.data);
-            msg = data.error.message;
+            msg = data.error.message || data.error.code;
           }
+          console.log(msg, e);
           this.onErr(msg);
         });
         source.addEventListener("abort", () => {
+          if (!this.streaming) {
+            return;
+          }
           let msg = this.lastMsg;
           if (msg) msg += "...\n\n";
           msg += "Aborted";
